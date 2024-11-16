@@ -1,16 +1,18 @@
-import Contact from "./component/Contact";
-import Footer from "./component/Footer";
-import Header from "./component/Header";
-import Hero from "./component/Hero";
+
 
 const App = () => {
+  const city = ['a','b','c','d'];
+
 
   return (
     <div>
-      <Header />
-      <Hero />
-      <Contact />
-      <Footer />
+      <ul>
+        {
+          city.map((item,i) => {
+            return <li key={i.toString()}>{item}</li>
+          })
+        }
+      </ul>
     </div>
   );
 };
