@@ -3,18 +3,40 @@ import { useState } from "react";
 
 const App = () => {
 
-  const [ number,setNumber ] = useState(1);
+  const [ list,setList ] = useState([]);
+  const [ item,setItem ] = useState('');
 
 
 
-  const changeNumber = () => {
-    setNumber(number - 1);
+
+
+  const AddToList = () => {
+    list.push(item);
+    setList([...list]);
   }
   
   return (
     <div> 
-      <h1>Number : {number}</h1>
-      <button onClick={changeNumber}>Click</button>
+      <table>
+        <tbody>
+          {
+            list.length!==0?(
+              list.map((element,index)=>{
+                return(
+                  <tr>
+                    <td>{element}</td>
+                    <td><button>Remove</button></td>
+                  </tr>
+                )
+              })
+            ):(<tr></tr>)
+          }
+        </tbody>
+      </table>
+
+      <p>{list.length}</p>
+      <input type="text" onChange={(e)=>setItem(e.target.value)} placeholder="Item"/>
+      <button onClick={AddToList}>Click</button>
     </div>
   );
 };
