@@ -1,9 +1,16 @@
+import Contact from "./component/Contact";
+import Footer from "./component/Footer";
+import Header from "./component/Header";
+import Hero from "./component/Hero";
 
 const App = () => {
 
   return (
     <div>
-      <h1>This is main page</h1>
+      <Header />
+      <Hero />
+      <Contact />
+      <Footer />
     </div>
   );
 };
