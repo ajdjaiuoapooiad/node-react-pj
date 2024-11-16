@@ -1,23 +1,20 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
-import NotFound from "./pages/NotFound";
+import { useState } from "react";
 
 
 const App = () => {
 
-  return (
-    <div>
+  const [ number,setNumber ] = useState(1);
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage/>}/>
-          <Route path="/about/:id/:name" element={<AboutPage/>}/>
-          <Route path="/contact" element={<ContactPage />}/>
-          <Route path="*" element={<NotFound />}/>
-        </Routes>
-      </BrowserRouter>
+
+
+  const changeNumber = () => {
+    setNumber(number - 1);
+  }
+  
+  return (
+    <div> 
+      <h1>Number : {number}</h1>
+      <button onClick={changeNumber}>Click</button>
     </div>
   );
 };
