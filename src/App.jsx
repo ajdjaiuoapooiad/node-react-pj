@@ -1,11 +1,11 @@
 
-function App() {
+const App = () => {
 
   return (
-    <>
-      <h1>Hello</h1>
-    </>
-  )
-}
+    <div>
+      <h1>This is main page</h1>
+    </div>
+  );
+};
 
-export default App
+export default App;
