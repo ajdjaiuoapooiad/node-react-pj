@@ -1,18 +1,23 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import NotFound from "./pages/NotFound";
 
 
 const App = () => {
-  const city = ['a','b','c','d'];
-
 
   return (
     <div>
-      <ul>
-        {
-          city.map((item,i) => {
-            return <li key={i.toString()}>{item}</li>
-          })
-        }
-      </ul>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/about" element={<AboutPage/>}/>
+          <Route path="/contact" element={<ContactPage />}/>
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
