@@ -3,40 +3,23 @@ import { useState } from "react";
 
 const App = () => {
 
-  const [ list,setList ] = useState([]);
-  const [ item,setItem ] = useState('');
-
-
-
-
-
-  const AddToList = () => {
-    list.push(item);
-    setList([...list]);
-  }
-  
+ 
   return (
-    <div> 
-      <table>
-        <tbody>
-          {
-            list.length!==0?(
-              list.map((element,index)=>{
-                return(
-                  <tr>
-                    <td>{element}</td>
-                    <td><button>Remove</button></td>
-                  </tr>
-                )
-              })
-            ):(<tr></tr>)
-          }
-        </tbody>
-      </table>
+    <div className="container"> 
+      <form action="">
+        <input type="text" placeholder="First Name"/>
+        <input type="text" placeholder="Last Name"/>
+        <select>
+          <option value="">Chose City</option>
+          <option value="Rajuary">Rajuary</option>
+          <option value="Dacka">Dacka</option>
+        </select>
 
-      <p>{list.length}</p>
-      <input type="text" onChange={(e)=>setItem(e.target.value)} placeholder="Item"/>
-      <button onClick={AddToList}>Click</button>
+        <input type="radio"  name="gender"/>Male
+        <input type="radio"  name="gender"/>Female
+        <br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
